@@ -29,6 +29,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .authorizeRequests()
                 .antMatchers("/order/*", "/cart", "/checkout").hasAuthority("ROLE_USER")
                 .anyRequest().permitAll();
+
     }
 
     @Override
@@ -47,4 +48,5 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     public static NoOpPasswordEncoder passwordEncoder() {
         return (NoOpPasswordEncoder) NoOpPasswordEncoder.getInstance();
     }
+
 }

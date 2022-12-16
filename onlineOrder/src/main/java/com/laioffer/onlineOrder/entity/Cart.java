@@ -3,21 +3,23 @@ package com.laioffer.onlineOrder.entity;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import javax.persistence.*;
 import java.io.Serializable;
+
+import javax.persistence.*;
+import java.io.Serializable;
 import java.util.List;
 
-
 @Entity
-@Table(name="cart")
+@Table(name = "cart")
 public class Cart implements Serializable {
+
     private static final long serialVersionUID = 8436097833452420298L;
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
 
-    @OneToMany(mappedBy = "cart", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "cart", cascade = CascadeType.ALL, fetch=FetchType.EAGER)
     private List<OrderItem> orderItemList;
-
 
     private double totalPrice;
 
@@ -45,3 +47,4 @@ public class Cart implements Serializable {
         this.totalPrice = totalPrice;
     }
 }
+

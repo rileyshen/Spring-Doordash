@@ -6,10 +6,8 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
 import java.io.Serializable;
-
-
 @Entity
-@Table(name="menuitem")
+@Table(name = "menuitem")
 public class MenuItem implements Serializable {
 
     private static final long serialVersionUID = 7551999649936522523L;

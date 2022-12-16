@@ -3,10 +3,10 @@ package com.laioffer.onlineOrder.entity;
 import javax.persistence.*;
 import java.io.Serializable;
 
-
 @Entity
-@Table(name="customers")
-public class Customer implements Serializable {
+@Table(name = "customers")
+public class Customer implements Serializable  {
+
     private static final long serialVersionUID = 2652327633296064143L;
 
     @Id
@@ -19,7 +19,6 @@ public class Customer implements Serializable {
     private String password;
 
     private boolean enabled;
-
 
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(unique = true)
